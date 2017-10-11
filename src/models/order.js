@@ -23,7 +23,7 @@ const schema = new Schema({
         enum: ['created', 'done'],
         default: 'created'
     },
-    itens: [{
+    items: [{
         quantity: {
             type: Number,
             required: true,
@@ -37,8 +37,7 @@ const schema = new Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Product'
         }
-    }]
+    }],
 });
 
 module.exports = mongoose.model('Order', schema);
-console.log('Order Model exportado com sucesso!')

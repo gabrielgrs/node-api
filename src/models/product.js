@@ -9,17 +9,16 @@ const schema = new Schema({
         required: true,
         trim: true
     },
-    slug: { // Cadeira gamer = cadeira-gamer
+    slug: {
         type: String,
-        required: [true, 'O slug é obrigatório!'],
+        required: [true, 'O slug é obrigatório'],
         trim: true,
         index: true,
         unique: true
     },
     description: {
         type: String,
-        required: true,
-        trim: true,
+        required: true
     },
     price: {
         type: Number,
@@ -33,8 +32,12 @@ const schema = new Schema({
     tags: [{
         type: String,
         required: true
-    }]
+    }],
+    image: {
+        type: String,
+        required: true,
+        trim: true
+    }
 });
 
 module.exports = mongoose.model('Product', schema);
-console.log('Product Model exportado com sucesso!')

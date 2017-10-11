@@ -1,9 +1,8 @@
 'use strict';
 
-
-const mongoose = require('mongoose');
-const Order = mongoose.model('Order');
-const repository = require('../repositories/order');
+const repository = require('../repositories/order-repository');
+const guid = require('guid');
+const authService = require('../services/auth-service');
 
 exports.get = async(req, res, next) => {
     try {
